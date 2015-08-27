@@ -67,12 +67,44 @@
      ParticularMove: capture from segmentedControl, and pass that forward.
      */
     
+//    ========
+//    setup
+//    ========
+    
         // Fetch ALL the data; we will have an array of FISDanceMoves...
-    FISDataStore *sharedStore = [FISDataStore sharedDataStore];
+    FISDataStore *sharedStore     = [FISDataStore sharedDataStore];
+    NSString *searchString        = [searchBar.text lowercaseString];
+    __block NSMutableArray *searchResults = [NSMutableArray new];
     
-        //Do it for one DanceMove:
+//    ===========
+//    execution
+//
+//    forEach NSManagedObject (FISDanceMove):
+//    NSManagedObject → NSEntityDescription → @{etc...} = [entity's attributesByName] →...
+//    ...→ iterate over that dict →→ if(foundMatch) then capture ObjectID and attribute in searchResults
+//    ===========
     
+        //        for (NSUInteger i = 0; i < sharedStore.dances.count; i++) {
     
+    for (FISDanceMove *dm in sharedStore.dances) {
+            //Get a reference to the NSManagedObject's NSEntityDescription
+        NSEntityDescription *dmEntity = [dm entity];
+        
+            //Get all of the attributes that are defined for the entity - not the relationship properties - just attributes
+        NSDictionary *dmAttributes = [dmEntity attributesByName];
+        
+        [dmAttributes enumerateKeysAndObjectsUsingBlock:^(NSString* key, NSString* obj, BOOL *stop) {
+            BOOL isMatch = [obj isEqualToString:searchString];
+            if (isMatch) {
+                [searchResults addObject:dm.objectID];
+            }
+        }];
+        
+    }
+    
+    }
+        }
+    }
     
     
     
@@ -81,10 +113,10 @@
     
     
         // Detect the chosen search parameters...
-    FISDanceMoveProperty selectedPropertyIdx = self.dancemoveSegmentedControl.selectedSegmentIndex;
+    self.dancemoveSegmentedControl.selectedSegmentIndex;
 //    NSString *searchKey = [[self.dancemoveSegmentedControl titleForSegmentAtIndex:segIdx] lowercaseString];
     
-    NSMutableArray *searchResults = [NSMutableArray new];
+
     
         //E.g., if dance[@"name"] contains:@"Twi"
     for (FISDanceMove *danceMove in sharedStore.dances) {
