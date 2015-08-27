@@ -7,8 +7,13 @@
 //
 
 #import "FISSearchViewController.h"
+#import <FlatUIKit.h>
+#define DBLG NSLog(@"%@ reporting!", NSStringFromSelector(_cmd));
+
 
 @interface FISSearchViewController ()
+@property (weak, nonatomic) IBOutlet SBSearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet FUISegmentedControl *dancemoveSegmentedControl;
 
 @end
 
@@ -27,7 +32,31 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor greenSeaColor];
+//    self.dancemoveSegmentedControl.backgroundColor = [UIColor midnightBlueColor];
+    
+    self.dancemoveSegmentedControl.selectedFont        = [UIFont boldFlatFontOfSize:16];
+    self.dancemoveSegmentedControl.selectedFontColor   = [UIColor cloudsColor];
+    self.dancemoveSegmentedControl.deselectedFont      = [UIFont flatFontOfSize:16];
+    self.dancemoveSegmentedControl.deselectedFontColor = [UIColor cloudsColor];
+    self.dancemoveSegmentedControl.selectedColor       = [UIColor pumpkinColor];
+    self.dancemoveSegmentedControl.deselectedColor     = [UIColor tangerineColor];
+    self.dancemoveSegmentedControl.disabledColor       = [UIColor midnightBlueColor];
+    self.dancemoveSegmentedControl.dividerColor        = [UIColor midnightBlueColor];
+    self.dancemoveSegmentedControl.cornerRadius        = 5.0;
+    
+    self.searchBar.backgroundColor = [UIColor midnightBlueColor];
+    [self.searchBar.cancelButton setTitleColor:[UIColor midnightBlueColor] forState:UIControlStateNormal];
+    
+    
+    
 }
+
+-(void)SBSearchBarCancelButtonClicked:(SBSearchBar *)searchBar {
+    DBLG
+    [searchBar resignFirstResponder];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

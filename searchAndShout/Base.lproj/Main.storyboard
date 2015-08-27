@@ -79,7 +79,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QJJ-91-kpT">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QJJ-91-kpT" customClass="FUISegmentedControl">
                                 <rect key="frame" x="-61" y="-14" width="123" height="29"/>
                                 <segments>
                                     <segment title="name"/>
@@ -88,24 +88,58 @@
                                     <segment title="Step 3"/>
                                     <segment title="Step 4"/>
                                 </segments>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="98" width="368" height="29"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="129" width="368" height="31"/>
                                 </variation>
                             </segmentedControl>
+                            <searchBar contentMode="redraw" searchBarStyle="prominent" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2OZ-vH-ZgO">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                <connections>
+                                    <outlet property="delegate" destination="CnT-7C-Tco" id="wiz-Wt-MEk"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QJJ-91-kpT" firstAttribute="top" secondItem="2OZ-vH-ZgO" secondAttribute="bottom" constant="21" id="KaN-Tj-w6i"/>
+                            <constraint firstItem="2OZ-vH-ZgO" firstAttribute="centerX" secondItem="QJJ-91-kpT" secondAttribute="centerX" id="NiN-Pg-vbx"/>
+                            <constraint firstAttribute="trailing" secondItem="2OZ-vH-ZgO" secondAttribute="trailing" id="egi-B9-8jn"/>
+                            <constraint firstItem="2OZ-vH-ZgO" firstAttribute="leading" secondItem="jkP-uP-ztp" secondAttribute="leading" id="sdC-pE-h2m"/>
+                            <constraint firstItem="2OZ-vH-ZgO" firstAttribute="top" secondItem="vER-V1-Tda" secondAttribute="bottom" id="zME-3q-fl6"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="QJJ-91-kpT"/>
+                                <exclude reference="2OZ-vH-ZgO"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="NiN-Pg-vbx"/>
+                                <exclude reference="egi-B9-8jn"/>
+                                <exclude reference="sdC-pE-h2m"/>
+                                <exclude reference="zME-3q-fl6"/>
+                                <exclude reference="KaN-Tj-w6i"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="QJJ-91-kpT"/>
+                                <include reference="2OZ-vH-ZgO"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="NiN-Pg-vbx"/>
+                                <include reference="egi-B9-8jn"/>
+                                <include reference="sdC-pE-h2m"/>
+                                <include reference="zME-3q-fl6"/>
+                                <include reference="KaN-Tj-w6i"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="NQV-6l-8Yv"/>
+                    <connections>
+                        <outlet property="dancemoveSegmentedControl" destination="QJJ-91-kpT" id="ZcY-Sr-S0e"/>
+                        <outlet property="searchBar" destination="2OZ-vH-ZgO" id="vWe-oG-4lv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCt-6q-szZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

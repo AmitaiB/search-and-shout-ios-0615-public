@@ -15,6 +15,7 @@
 		318F5FCA19F81DB600ADA305 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 318F5FC719F81DB600ADA305 /* main.m */; };
 		318F5FCD19F81DBC00ADA305 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 318F5FCC19F81DBC00ADA305 /* InfoPlist.strings */; };
 		318F5FE219F93F0F00ADA305 /* searchAndShout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 318F5FE019F93F0F00ADA305 /* searchAndShout.xcdatamodeld */; };
+		581F2D5591148A69B6E94DDD /* libPods-searchAndShout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9364A1E5C9BA900D8F85895 /* libPods-searchAndShout.a */; };
 		7DD53D22E968B81358BB917B /* libPods-searchAndShoutTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 034B2405E969669D80DA2785 /* libPods-searchAndShoutTests.a */; };
 		D8E17A791964331900F1549F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E17A781964331900F1549F /* Foundation.framework */; };
 		D8E17A7B1964331900F1549F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E17A7A1964331900F1549F /* CoreGraphics.framework */; };
@@ -56,6 +57,8 @@
 		318F5FCC19F81DBC00ADA305 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		318F5FE119F93F0F00ADA305 /* searchAndShout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = searchAndShout.xcdatamodel; sourceTree = "<group>"; };
 		4B0DF866CE7A3AB196EF3070 /* Pods-searchAndShoutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-searchAndShoutTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-searchAndShoutTests/Pods-searchAndShoutTests.release.xcconfig"; sourceTree = "<group>"; };
+		AF5A83CE1E5B324B07B67381 /* Pods-searchAndShout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-searchAndShout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-searchAndShout/Pods-searchAndShout.debug.xcconfig"; sourceTree = "<group>"; };
+		B9364A1E5C9BA900D8F85895 /* libPods-searchAndShout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-searchAndShout.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5AFF0E82641F62D1C923F8 /* Pods-searchAndShoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-searchAndShoutTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-searchAndShoutTests/Pods-searchAndShoutTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D8E17A751964331900F1549F /* searchAndShout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = searchAndShout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E17A781964331900F1549F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -68,6 +71,7 @@
 		D8E17AA11964331900F1549F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D8E17AA31964331900F1549F /* searchAndShoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = searchAndShoutTests.m; sourceTree = "<group>"; };
 		D8E17AB01964337E00F1549F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E941FB52CE17B54531A19F51 /* Pods-searchAndShout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-searchAndShout.release.xcconfig"; path = "Pods/Target Support Files/Pods-searchAndShout/Pods-searchAndShout.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 				D8E17A7B1964331900F1549F /* CoreGraphics.framework in Frameworks */,
 				D8E17A7D1964331900F1549F /* UIKit.framework in Frameworks */,
 				D8E17A791964331900F1549F /* Foundation.framework in Frameworks */,
+				581F2D5591148A69B6E94DDD /* libPods-searchAndShout.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +106,8 @@
 			children = (
 				CF5AFF0E82641F62D1C923F8 /* Pods-searchAndShoutTests.debug.xcconfig */,
 				4B0DF866CE7A3AB196EF3070 /* Pods-searchAndShoutTests.release.xcconfig */,
+				AF5A83CE1E5B324B07B67381 /* Pods-searchAndShout.debug.xcconfig */,
+				E941FB52CE17B54531A19F51 /* Pods-searchAndShout.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -134,6 +141,7 @@
 				D8E17A7C1964331900F1549F /* UIKit.framework */,
 				D8E17A971964331900F1549F /* XCTest.framework */,
 				034B2405E969669D80DA2785 /* libPods-searchAndShoutTests.a */,
+				B9364A1E5C9BA900D8F85895 /* libPods-searchAndShout.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -194,9 +202,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8E17AA71964331900F1549F /* Build configuration list for PBXNativeTarget "searchAndShout" */;
 			buildPhases = (
+				94CD2FC33019216FA52891BC /* Check Pods Manifest.lock */,
 				D8E17A711964331900F1549F /* Sources */,
 				D8E17A721964331900F1549F /* Frameworks */,
 				D8E17A731964331900F1549F /* Resources */,
+				3AA1FB9456101CBF9349B588 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -297,7 +307,37 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-searchAndShoutTests/Pods-searchAndShoutTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3AA1FB9456101CBF9349B588 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-searchAndShout/Pods-searchAndShout-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		868606444A1923C59EA6BC1A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		94CD2FC33019216FA52891BC /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -439,6 +479,7 @@
 		};
 		D8E17AA81964331900F1549F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF5A83CE1E5B324B07B67381 /* Pods-searchAndShout.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -452,6 +493,7 @@
 		};
 		D8E17AA91964331900F1549F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E941FB52CE17B54531A19F51 /* Pods-searchAndShout.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
