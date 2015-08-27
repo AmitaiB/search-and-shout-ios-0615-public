@@ -6,6 +6,8 @@ source 'https://github.com/CocoaPods/Specs.git'
 target "searchAndShout" do
 pod 'FlatUIKit'
 pod 'SBSearchBar'
+pod 'MessageBarManager', '~> 1.1'
+
 
 end
 

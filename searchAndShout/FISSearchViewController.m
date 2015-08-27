@@ -8,6 +8,9 @@
 
 #import "FISSearchViewController.h"
 #import <FlatUIKit.h>
+#import <MessageBarManager.h>
+#import "FISDataStore.h"
+
 #define DBLG NSLog(@"%@ reporting!", NSStringFromSelector(_cmd));
 
 
@@ -47,15 +50,31 @@
     
     self.searchBar.backgroundColor = [UIColor midnightBlueColor];    
     
-    
 }
-
 
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     [searchBar resignFirstResponder];
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    switch (self.dancemoveSegmentedControl.selectedSegmentIndex) {
+        case 0:
+            break;
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        default:
+            break;
+    }
+    
+    FISDataStore *sharedStore = [FISDataStore sharedDataStore];
+     sharedStore.dances
+    
         //search
 }
 

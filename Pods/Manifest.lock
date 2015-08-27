@@ -4,6 +4,7 @@ PODS:
   - KIF (3.0.8):
     - KIF/XCTest (= 3.0.8)
   - KIF/XCTest (3.0.8)
+  - MessageBarManager (1.1.0)
   - OCHamcrest (4.0.1)
   - OCMockito (1.3.1):
     - OCHamcrest (~> 4.0)
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - Expecta (~> 0.2.4)
   - FlatUIKit
   - KIF (~> 3.0.4)
+  - MessageBarManager
   - OCMockito
   - OHHTTPStubs (~> 3.1.2)
   - SBSearchBar
@@ -32,6 +34,7 @@ SPEC CHECKSUMS:
   Expecta: cfaf1d3e2e194ca704a25e997093d30a1ce70b61
   FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
   KIF: 3c2cb8e66fb216f9c3abcd714699411f0256f767
+  MessageBarManager: 168344bc3b916f1761c87c3fcf3cec4d6ec360e6
   OCHamcrest: a62dbcf4dec9cbf091263d936e0de8dec02baac0
   OCMockito: 958f33ee8ad03eeb62e1397ef6b60f5121214ca4
   OHHTTPStubs: b671969016b4c6f5ee3c26080c81114ba82e0710
