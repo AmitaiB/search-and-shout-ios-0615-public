@@ -73,8 +73,11 @@
     
         // Fetch ALL the data; we will have an array of FISDanceMoves...
     FISDataStore *sharedStore     = [FISDataStore sharedDataStore];
+        // User input (seg cont + searchBar):
+    NSUInteger selectedAttributeToSearchIdx = self.dancemoveSegmentedControl.selectedSegmentIndex;
     NSString *searchString        = [searchBar.text lowercaseString];
-    __block NSMutableArray *searchResults = [NSMutableArray new];
+        // Our output:
+    NSMutableArray *searchResults = [NSMutableArray new];
     
 //    ===========
 //    execution
@@ -92,47 +95,18 @@
         
             //Get all of the attributes that are defined for the entity - not the relationship properties - just attributes
         NSDictionary *dmAttributes = [dmEntity attributesByName];
-        
-        [dmAttributes enumerateKeysAndObjectsUsingBlock:^(NSString* key, NSString* obj, BOOL *stop) {
-            BOOL isMatch = [obj isEqualToString:searchString];
-            if (isMatch) {
-                [searchResults addObject:dm.objectID];
-            }
-        }];
-        
-    }
-    
-    }
-        }
-    }
-    
-    
-    
-    
-    
-    
-    
-        // Detect the chosen search parameters...
-    self.dancemoveSegmentedControl.selectedSegmentIndex;
-//    NSString *searchKey = [[self.dancemoveSegmentedControl titleForSegmentAtIndex:segIdx] lowercaseString];
-    
-
-    
-        //E.g., if dance[@"name"] contains:@"Twi"
-    for (FISDanceMove *danceMove in sharedStore.dances) {
-        NSArray *danceMoveProperties = [danceMove properties];
-        NSString *selectedProperty = (NSString*)danceMoveProperties[selectedProperty];
-        NSString *searchString = [searchBar.text lowercaseString];
-        
-        if ([selectedProperty containsString:searchString]) {
-            [searchResults addObject:selectedProperty];
+        NSArray *dmAttributeValues = [dmAttributes allValues];
+        NSString *selectedAttribute = dmAttributeValues[selectedAttributeToSearchIdx];
+        BOOL isMatch = [selectedAttribute containsString:searchString];
+        if (isMatch) {
+            NSArray *dmAttributeKeys = [dmAttributes allKeys];
+            NSString *selectedAttributeName = dmAttributeKeys[selectedAttributeToSearchIdx];
+                // since there's a match, we add the ObjectID and the name of the attribute to the searchResults array
+            [searchResults addObject:@[dm.objectID,selectedAttributeName]];
         }
     }
     
     NSLog(@"searchResults: %@", [searchResults description]);
-    
-    
-        //search
 }
 
 
