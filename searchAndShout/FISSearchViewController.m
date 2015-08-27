@@ -70,6 +70,16 @@
         // Fetch ALL the data; we will have an array of FISDanceMoves...
     FISDataStore *sharedStore = [FISDataStore sharedDataStore];
     
+        //Do it for one DanceMove:
+    
+    
+    
+    
+    
+    
+    
+    
+    
         // Detect the chosen search parameters...
     FISDanceMoveProperty selectedPropertyIdx = self.dancemoveSegmentedControl.selectedSegmentIndex;
 //    NSString *searchKey = [[self.dancemoveSegmentedControl titleForSegmentAtIndex:segIdx] lowercaseString];
@@ -92,7 +102,6 @@
     
         //search
 }
-
 
 
 - (void)didReceiveMemoryWarning
