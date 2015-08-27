@@ -4,7 +4,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 # platform :ios, "6.0"
 
 target "searchAndShout" do
-
+pod 'FlatUIKit'
 
 end
 
