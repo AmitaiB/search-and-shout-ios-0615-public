@@ -57,23 +57,25 @@
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    switch (self.dancemoveSegmentedControl.selectedSegmentIndex) {
-        case 0:
-            break;
-        case 1:
-            break;
-        case 2:
-            break;
-        case 3:
-            break;
-        case 4:
-            break;
-        default:
-            break;
+        // Fetch ALL the data...
+    FISDataStore *sharedStore = [FISDataStore sharedDataStore];
+//    NSLog(@"%@", [sharedStore.dances description]);
+    
+        // Detect the chosen search parameters...
+    NSUInteger segIdx = self.dancemoveSegmentedControl.selectedSegmentIndex;
+    NSString *searchKey = [[self.dancemoveSegmentedControl titleForSegmentAtIndex:segIdx] lowercaseString];
+    
+    NSMutableArray *searchResults = [NSMutableArray new];
+    
+        //E.g., if dance[@"name"] contains:@"Twi"
+    for (NSDictionary *dance in sharedStore.dances) {
+        if ([(NSString*)dance[searchKey] containsString:[searchBar.text lowercaseString]]) {
+            [searchResults addObject:dance[searchKey]];
+        }
     }
     
-    FISDataStore *sharedStore = [FISDataStore sharedDataStore];
-     sharedStore.dances
+    NSLog(@"searchResults: %@", [searchResults description]);
+    
     
         //search
 }

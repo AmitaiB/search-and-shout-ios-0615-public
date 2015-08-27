@@ -1,0 +1,1 @@
+../../../MessageBarManager/Classes/MessageBarManager.h
