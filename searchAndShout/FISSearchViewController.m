@@ -74,8 +74,9 @@
         // Fetch ALL the data; we will have an array of FISDanceMoves...
     FISDataStore *sharedStore     = [FISDataStore sharedDataStore];
         // User input (seg cont + searchBar):
-    NSUInteger selectedAttributeToSearchIdx = self.dancemoveSegmentedControl.selectedSegmentIndex;
-    NSString *searchString        = [searchBar.text lowercaseString];
+    NSUInteger selectedSegmentIndex =   self.dancemoveSegmentedControl.selectedSegmentIndex;
+    NSString *searchKey             = [[self.dancemoveSegmentedControl titleForSegmentAtIndex:selectedSegmentIndex] lowercaseString];
+    NSString *searchString          = [searchBar.text lowercaseString];
         // Our output:
     NSMutableArray *searchResults = [NSMutableArray new];
     
@@ -83,34 +84,21 @@
 //    execution
 //
 //    forEach NSManagedObject (FISDanceMove):
-//    NSManagedObject → NSEntityDescription → @{etc...} = [entity's attributesByName] →...
-//    ...→ iterate over that dict →→ if(foundMatch) then capture ObjectID and attribute in searchResults
+//    NSManagedObject[targetAttributeFromSegmentedControl] →→ if(foundMatch) then capture ObjectID and attribute in searchResults
 //    ===========
     
-        //        for (NSUInteger i = 0; i < sharedStore.dances.count; i++) {
+        //For debugging, incremental accumulators...
+    NSUInteger accumulator_loop = 0;
+    NSUInteger accumulator_matches = 0;
     
-    for (FISDanceMove *dm in sharedStore.dances) {
-            //Get a reference to the NSManagedObject's NSEntityDescription
-        NSEntityDescription *dmEntity = [dm entity];
-        
-            //Get all of the attributes that are defined for the entity - not the relationship properties - just attributes
-        NSDictionary *dmAttributes = [dmEntity attributesByName];
-        NSDictionary *dmProperties = [dmEntity propertiesByName];
-        NSDictionary *dmProperties2 = [dmEntity properties];
-        NSArray *dmAttributeValues = [dmAttributes allValues];
-        [dmAttributeValues indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-        
-            return 0;
-        }];
-        
-        NSString *selectedAttribute = ((NSAttributeDescription*)dmAttributeValues[selectedAttributeToSearchIdx]).attributeValueClassName;
-        BOOL isMatch = [selectedAttribute containsString:searchString];
+    for (FISDanceMove *aDanceMove in sharedStore.dances) {
+        BOOL isMatch = [[aDanceMove valueForKey:searchKey] containsString:searchString];
         if (isMatch) {
-            NSArray *dmAttributeKeys = [dmAttributes allKeys];
-            NSString *selectedAttributeName = dmAttributeKeys[selectedAttributeToSearchIdx];
                 // since there's a match, we add the ObjectID and the name of the attribute to the searchResults array
-            [searchResults addObject:@[dm.objectID,selectedAttributeName]];
+            [searchResults addObject:@[aDanceMove.objectID, searchKey]];
+            accumulator_matches++;
         }
+        accumulator_loop++;
     }
     
     NSLog(@"searchResults: %@", [searchResults description]);
