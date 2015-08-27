@@ -10,4 +10,6 @@
 
 @interface FISFetchResultsTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSArray *searchResults;
+
 @end

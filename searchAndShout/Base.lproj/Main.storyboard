@@ -96,8 +96,7 @@
                                         <exclude reference="Nxc-kM-72i"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="129" width="368" height="29"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="Nxc-kM-72i"/>
                                     </mask>
@@ -150,7 +149,7 @@
                     <connections>
                         <outlet property="dancemoveSegmentedControl" destination="QJJ-91-kpT" id="ZcY-Sr-S0e"/>
                         <outlet property="searchBar" destination="2OZ-vH-ZgO" id="vWe-oG-4lv"/>
-                        <segue destination="jhe-dF-5QS" kind="show" id="Mlv-QK-bNI"/>
+                        <segue destination="jhe-dF-5QS" kind="show" identifier="searchToTableViewSegueID" id="Mlv-QK-bNI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCt-6q-szZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -162,10 +161,11 @@
             <objects>
                 <tableViewController id="jhe-dF-5QS" customClass="FISFetchResultsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8FU-dS-UwM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellReuseID" textLabel="awG-84-C41" detailTextLabel="K1O-fY-Usd" style="IBUITableViewCellStyleSubtitle" id="KhN-Bg-UoK">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchResultCell" textLabel="awG-84-C41" detailTextLabel="K1O-fY-Usd" style="IBUITableViewCellStyleSubtitle" id="KhN-Bg-UoK">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KhN-Bg-UoK" id="Ibc-1p-FLg">
                                     <autoresizingMask key="autoresizingMask"/>

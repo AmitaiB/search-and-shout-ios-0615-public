@@ -7,6 +7,7 @@
 //
 
 #import "FISSearchViewController.h"
+#import "FISFetchResultsTableViewController.h"
 #import <FlatUIKit.h>
 #import <MessageBarManager.h>
 #import "FISDataStore.h"
@@ -21,7 +22,9 @@
 
 @end
 
-@implementation FISSearchViewController
+@implementation FISSearchViewController {
+    NSMutableArray *searchResults;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -62,9 +65,6 @@
      *  Given an array of FISDanceMovies, 
      I. search each DanceMove's chosen parameter to see if it has the searchString.
      II. If it does, we want to capture the move, and the particular move.
-     
-     DanceMove: capture the objectID, and pass that forward.
-     ParticularMove: capture from segmentedControl, and pass that forward.
      */
     
 //    ========
@@ -78,7 +78,7 @@
     NSString *searchKey             = [[self.dancemoveSegmentedControl titleForSegmentAtIndex:selectedSegmentIndex] lowercaseString];
     NSString *searchString          = [searchBar.text lowercaseString];
         // Our output:
-    NSMutableArray *searchResults = [NSMutableArray new];
+    searchResults = [NSMutableArray new];
     
 //    ===========
 //    execution
@@ -111,15 +111,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    FISFetchResultsTableViewController *destinationVC = segue.destinationViewController;
+    destinationVC.searchResults = [searchResults copy];
+    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end
