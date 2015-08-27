@@ -58,20 +58,32 @@
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-        // Fetch ALL the data...
+    /**
+     *  Given an array of FISDanceMovies, 
+     I. search each DanceMove's chosen parameter to see if it has the searchString.
+     II. If it does, we want to capture the move, and the particular move.
+     
+     DanceMove: capture the objectID, and pass that forward.
+     ParticularMove: capture from segmentedControl, and pass that forward.
+     */
+    
+        // Fetch ALL the data; we will have an array of FISDanceMoves...
     FISDataStore *sharedStore = [FISDataStore sharedDataStore];
-//    NSLog(@"%@", [sharedStore.dances description]);
     
         // Detect the chosen search parameters...
-    NSUInteger segIdx = self.dancemoveSegmentedControl.selectedSegmentIndex;
-    NSString *searchKey = [[self.dancemoveSegmentedControl titleForSegmentAtIndex:segIdx] lowercaseString];
+    FISDanceMoveProperty selectedPropertyIdx = self.dancemoveSegmentedControl.selectedSegmentIndex;
+//    NSString *searchKey = [[self.dancemoveSegmentedControl titleForSegmentAtIndex:segIdx] lowercaseString];
     
     NSMutableArray *searchResults = [NSMutableArray new];
     
         //E.g., if dance[@"name"] contains:@"Twi"
     for (FISDanceMove *danceMove in sharedStore.dances) {
-        if ([(NSString*)danceMove[searchKey] containsString:[searchBar.text lowercaseString]]) {
-            [searchResults addObject:dance[searchKey]];
+        NSArray *danceMoveProperties = [danceMove properties];
+        NSString *selectedProperty = (NSString*)danceMoveProperties[selectedProperty];
+        NSString *searchString = [searchBar.text lowercaseString];
+        
+        if ([selectedProperty containsString:searchString]) {
+            [searchResults addObject:selectedProperty];
         }
     }
     
@@ -80,6 +92,8 @@
     
         //search
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
