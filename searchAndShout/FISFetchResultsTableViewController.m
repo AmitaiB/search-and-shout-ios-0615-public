@@ -7,21 +7,27 @@
 //
 
 #import "FISFetchResultsTableViewController.h"
+#import "FISDanceMove.h"
+#import "FISDataStore.h"
 
 @interface FISFetchResultsTableViewController ()
 
 @end
 
-@implementation FISFetchResultsTableViewController
+@implementation FISFetchResultsTableViewController {
+    FISDataStore *dataStore;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
+    dataStore = [FISDataStore sharedDataStore];
+
+        // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,6 +52,13 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"searchResultCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    NSLog(@"%@", [self.searchResults description]);
+    NSError *error = nil;
+    FISDanceMove *danceMove = (FISDanceMove*)[dataStore.managedObjectContext existingObjectWithID:self.searchResults[indexPath.row][0] error:&error];
+    NSString *danceStep = self.searchResults[indexPath.row][1];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"Search Result: %@", [danceMove valueForKey:danceStep]];
+    cell.detailTextLabel.text = [NSString stringWithFormat: @"Dance : %@", [danceMove valueForKey:@"name"]];
     
     return cell;
 }

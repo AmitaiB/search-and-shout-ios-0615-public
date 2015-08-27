@@ -56,6 +56,8 @@
     
 }
 
+#pragma mark - UISearchBarDelegate methods
+
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     [searchBar resignFirstResponder];
 }
@@ -102,6 +104,9 @@
     }
     
     NSLog(@"searchResults: %@", [searchResults description]);
+    
+    [searchBar resignFirstResponder];
+    [self performSegueWithIdentifier:@"searchToTableViewSegueID" sender:nil];
 }
 
 
