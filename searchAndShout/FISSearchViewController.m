@@ -95,8 +95,15 @@
         
             //Get all of the attributes that are defined for the entity - not the relationship properties - just attributes
         NSDictionary *dmAttributes = [dmEntity attributesByName];
+        NSDictionary *dmProperties = [dmEntity propertiesByName];
+        NSDictionary *dmProperties2 = [dmEntity properties];
         NSArray *dmAttributeValues = [dmAttributes allValues];
-        NSString *selectedAttribute = dmAttributeValues[selectedAttributeToSearchIdx];
+        [dmAttributeValues indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        
+            return 0;
+        }];
+        
+        NSString *selectedAttribute = ((NSAttributeDescription*)dmAttributeValues[selectedAttributeToSearchIdx]).attributeValueClassName;
         BOOL isMatch = [selectedAttribute containsString:searchString];
         if (isMatch) {
             NSArray *dmAttributeKeys = [dmAttributes allKeys];
