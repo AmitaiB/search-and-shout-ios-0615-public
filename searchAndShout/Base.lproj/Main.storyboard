@@ -81,18 +81,29 @@
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QJJ-91-kpT" customClass="FUISegmentedControl">
                                 <rect key="frame" x="-61" y="-14" width="123" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Nxc-kM-72i"/>
+                                </constraints>
                                 <segments>
-                                    <segment title="name"/>
-                                    <segment title="Step 1"/>
-                                    <segment title="Step 2"/>
-                                    <segment title="Step 3"/>
-                                    <segment title="Step 4"/>
+                                    <segment title="Name"/>
+                                    <segment title="Step1"/>
+                                    <segment title="Step2"/>
+                                    <segment title="Step3"/>
+                                    <segment title="Step4"/>
                                 </segments>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Nxc-kM-72i"/>
+                                    </mask>
+                                </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="129" width="368" height="31"/>
+                                    <rect key="frame" x="16" y="129" width="368" height="29"/>
+                                    <mask key="constraints">
+                                        <include reference="Nxc-kM-72i"/>
+                                    </mask>
                                 </variation>
                             </segmentedControl>
-                            <searchBar contentMode="redraw" searchBarStyle="prominent" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2OZ-vH-ZgO">
+                            <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Find a DanceMove or step!" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2OZ-vH-ZgO">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <connections>
@@ -139,11 +150,37 @@
                     <connections>
                         <outlet property="dancemoveSegmentedControl" destination="QJJ-91-kpT" id="ZcY-Sr-S0e"/>
                         <outlet property="searchBar" destination="2OZ-vH-ZgO" id="vWe-oG-4lv"/>
+                        <segue destination="jhe-dF-5QS" kind="show" id="Mlv-QK-bNI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCt-6q-szZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1914" y="217"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="hje-jB-5iC">
+            <objects>
+                <tableViewController id="jhe-dF-5QS" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8FU-dS-UwM">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KhN-Bg-UoK">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KhN-Bg-UoK" id="Ibc-1p-FLg">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jhe-dF-5QS" id="W18-vd-Px7"/>
+                            <outlet property="delegate" destination="jhe-dF-5QS" id="eIc-Mp-peJ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DUt-oC-jTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2632.5" y="217"/>
         </scene>
     </scenes>
 </document>

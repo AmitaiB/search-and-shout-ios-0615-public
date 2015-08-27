@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <SBSearchBar.h>
 
-@interface FISSearchViewController : UIViewController <SBSearchBarDelegate>
+@interface FISSearchViewController : UIViewController <UISearchBarDelegate>
 
 @end

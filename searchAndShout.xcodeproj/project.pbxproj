@@ -15,6 +15,7 @@
 		318F5FCA19F81DB600ADA305 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 318F5FC719F81DB600ADA305 /* main.m */; };
 		318F5FCD19F81DBC00ADA305 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 318F5FCC19F81DBC00ADA305 /* InfoPlist.strings */; };
 		318F5FE219F93F0F00ADA305 /* searchAndShout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 318F5FE019F93F0F00ADA305 /* searchAndShout.xcdatamodeld */; };
+		382471D11B8EC49F00DC7F42 /* FISFetchResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382471D01B8EC49F00DC7F42 /* FISFetchResultsTableViewController.m */; };
 		581F2D5591148A69B6E94DDD /* libPods-searchAndShout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9364A1E5C9BA900D8F85895 /* libPods-searchAndShout.a */; };
 		7DD53D22E968B81358BB917B /* libPods-searchAndShoutTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 034B2405E969669D80DA2785 /* libPods-searchAndShoutTests.a */; };
 		D8E17A791964331900F1549F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E17A781964331900F1549F /* Foundation.framework */; };
@@ -56,6 +57,8 @@
 		318F5FC919F81DB600ADA305 /* searchAndShout-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "searchAndShout-Prefix.pch"; sourceTree = "<group>"; };
 		318F5FCC19F81DBC00ADA305 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		318F5FE119F93F0F00ADA305 /* searchAndShout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = searchAndShout.xcdatamodel; sourceTree = "<group>"; };
+		382471CF1B8EC49F00DC7F42 /* FISFetchResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISFetchResultsTableViewController.h; sourceTree = "<group>"; };
+		382471D01B8EC49F00DC7F42 /* FISFetchResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISFetchResultsTableViewController.m; sourceTree = "<group>"; };
 		4B0DF866CE7A3AB196EF3070 /* Pods-searchAndShoutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-searchAndShoutTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-searchAndShoutTests/Pods-searchAndShoutTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF5A83CE1E5B324B07B67381 /* Pods-searchAndShout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-searchAndShout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-searchAndShout/Pods-searchAndShout.debug.xcconfig"; sourceTree = "<group>"; };
 		B9364A1E5C9BA900D8F85895 /* libPods-searchAndShout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-searchAndShout.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +162,8 @@
 				318F5FBF19F81DA100ADA305 /* FISDataStore.m */,
 				318F5FC019F81DA100ADA305 /* FISSearchViewController.h */,
 				318F5FC119F81DA100ADA305 /* FISSearchViewController.m */,
+				382471CF1B8EC49F00DC7F42 /* FISFetchResultsTableViewController.h */,
+				382471D01B8EC49F00DC7F42 /* FISFetchResultsTableViewController.m */,
 				318F5FE019F93F0F00ADA305 /* searchAndShout.xcdatamodeld */,
 				D8E17A8A1964331900F1549F /* Main.storyboard */,
 				D8E17A7F1964331900F1549F /* Supporting Files */,
@@ -363,6 +368,7 @@
 				318F5FC319F81DA100ADA305 /* FISDanceMove.m in Sources */,
 				318F5FE219F93F0F00ADA305 /* searchAndShout.xcdatamodeld in Sources */,
 				318F5FC619F81DA100ADA305 /* FISSearchViewController.m in Sources */,
+				382471D11B8EC49F00DC7F42 /* FISFetchResultsTableViewController.m in Sources */,
 				318F5FC519F81DA100ADA305 /* FISDataStore.m in Sources */,
 				318F5FCA19F81DB600ADA305 /* main.m in Sources */,
 				318F5FC219F81DA100ADA305 /* FISAppDelegate.m in Sources */,

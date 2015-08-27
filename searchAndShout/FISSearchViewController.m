@@ -12,7 +12,7 @@
 
 
 @interface FISSearchViewController ()
-@property (weak, nonatomic) IBOutlet SBSearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet FUISegmentedControl *dancemoveSegmentedControl;
 
 @end
@@ -45,18 +45,19 @@
     self.dancemoveSegmentedControl.dividerColor        = [UIColor midnightBlueColor];
     self.dancemoveSegmentedControl.cornerRadius        = 5.0;
     
-    self.searchBar.backgroundColor = [UIColor midnightBlueColor];
-    [self.searchBar.cancelButton setTitleColor:[UIColor midnightBlueColor] forState:UIControlStateNormal];
-    
+    self.searchBar.backgroundColor = [UIColor midnightBlueColor];    
     
     
 }
 
--(void)SBSearchBarCancelButtonClicked:(SBSearchBar *)searchBar {
-    DBLG
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     [searchBar resignFirstResponder];
 }
 
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+        //search
+}
 
 - (void)didReceiveMemoryWarning
 {
