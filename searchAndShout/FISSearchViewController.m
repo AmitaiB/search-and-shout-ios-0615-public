@@ -10,6 +10,7 @@
 #import <FlatUIKit.h>
 #import <MessageBarManager.h>
 #import "FISDataStore.h"
+#import "FISDanceMove.h"
 
 #define DBLG NSLog(@"%@ reporting!", NSStringFromSelector(_cmd));
 
@@ -68,8 +69,8 @@
     NSMutableArray *searchResults = [NSMutableArray new];
     
         //E.g., if dance[@"name"] contains:@"Twi"
-    for (NSDictionary *dance in sharedStore.dances) {
-        if ([(NSString*)dance[searchKey] containsString:[searchBar.text lowercaseString]]) {
+    for (FISDanceMove *danceMove in sharedStore.dances) {
+        if ([(NSString*)danceMove[searchKey] containsString:[searchBar.text lowercaseString]]) {
             [searchResults addObject:dance[searchKey]];
         }
     }

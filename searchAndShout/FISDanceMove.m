@@ -17,4 +17,14 @@
 @dynamic step4;
 @dynamic name;
 
+-(NSArray*)properties {
+    return @[self.name,
+             self.step1,
+             self.step2,
+             self.step3,
+             self.step4];
+}
+
+
+
 @end

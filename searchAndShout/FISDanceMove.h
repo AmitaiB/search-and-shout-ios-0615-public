@@ -18,4 +18,14 @@
 @property (nonatomic, retain) NSString * step4;
 @property (nonatomic, retain) NSString * name;
 
+-(NSArray*)properties;
+
+typedef NS_ENUM(NSUInteger, FISDanceMoveProperty) {
+    FISdmName,
+    FISdmStep1,
+    FISdmStep2,
+    FISdmStep3,
+    FISdmStep4
+};
+
 @end
